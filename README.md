@@ -2,9 +2,6 @@
 
 A altered version of Jason Fancis' brick breaker, 2/25/2023
 
-Description
-It's a brick breaker!
-
 ## Implementation
 Sound effects
 Music
