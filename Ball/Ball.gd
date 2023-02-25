@@ -4,9 +4,10 @@ var min_speed = 100.0
 var max_speed = 600.0
 var speed_multiplier = 1.0
 var accelerate = false
-
+var h_rotate = 0.0
 var released = true
-
+var time_highlight = 0.4
+var time_highlight_size = 0.3
 var initial_velocity = Vector2.ZERO
 
 func _ready():
@@ -23,7 +24,10 @@ func _ready():
 func _on_Ball_body_entered(body):
 	if body.has_method("hit"):
 		body.hit(self)
-		accelerate = true	
+		accelerate = true
+		$Tween.interpolate_property($Highlight, "modulate:a", 1.0, 0.0, time_highlight, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+		$Tween.interpolate_property($Highlight, "scale", Vector2(2.0,2.0), Vector2(1.0,1.0), time_highlight_size, Tween.TRANS_BOUNCE, Tween.EASE_IN)
+		$Tween.start()
 
 func _input(event):
 	if not released and event.is_action_pressed("release"):
@@ -56,4 +60,7 @@ func change_speed(s):
 	speed_multiplier = s
 
 func die():
+	var die_sound = get_node_or_null("/root/Game/Die_Sound")
+	if die_sound != null:
+		die_sound.play()
 	queue_free()

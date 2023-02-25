@@ -5,6 +5,9 @@ export var speed = 10.0
 var width = 0
 var width_default = 0
 var decay = 0.02
+var time_highlight = 0.4
+var time_highlight_size = 0.3
+var time_bounce = 0.75
 
 func _ready():
 	width = $CollisionShape2D.get_shape().get_extents().x
@@ -22,7 +25,9 @@ func _input(event):
 		target.x += event.relative.x
 
 func hit(_ball):
-	pass
+	var paddle_sound = get_node_or_null("/root/Game/Paddle_Sound")
+	if paddle_sound != null:
+		paddle_sound.play()
 
 func powerup(payload):
 	for c in $Powerups.get_children():
