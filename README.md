@@ -3,7 +3,7 @@
 A altered version of Jason Fancis' brick breaker, 2/25/2023
 
 ## Implementation
-Sound effects
+Sound effects <br>
 Music
 Animated Background
 Assets
