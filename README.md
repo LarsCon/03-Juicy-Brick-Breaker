@@ -1,14 +1,16 @@
-# Project Name
+# Lars' Brick Breaker Game
 
-Context and date
-
-Description
-
+A altered version of Jason Fancis' brick breaker, 2/25/2023
 
 ## Implementation
-
-Which features you included
-
+Sound effects
+Music
+Animated Background
+Assets
+Wall color change on hit
+Ball Highlight
+Screen Shake
+My best attempt at encorporating ball physics (you gatta flick that wrist)
 
 ## References
 
@@ -17,3 +19,4 @@ Which features you included
 
 
 ## Created by
+Lars Conard
